@@ -24,11 +24,7 @@ Varasto varasto = ctx.getBean(Varasto.class);
 Pankki pankki = ctx.getBean(Pankki.class);
 
 
-//    Viitegeneraattori viitegen = ctx.getBean(Viitegeneraattori.class);
-//    Kirjanpito kirjanpito      = new Kirjanpito();
-//    Varasto varasto            = new Varasto();
-//    Pankki pankki              = new Pankki();
-//    Kauppa kauppa              = new Kauppa(varasto, pankki, viitegen);
+
 
         // kauppa hoitaa yhden asiakkaan kerrallaan seuraavaan tapaan:
         kauppa.aloitaAsiointi();
