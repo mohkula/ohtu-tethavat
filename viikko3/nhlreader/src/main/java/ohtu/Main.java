@@ -2,6 +2,8 @@ package ohtu;
 
 import com.google.gson.Gson;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collections;
 import org.apache.http.client.fluent.Request;
 
 
@@ -19,7 +21,12 @@ public class Main {
 
         System.out.println("Oliot:");
         for (Player player : players) {
+            Arrays.sort(players,Collections.reverseOrder());
+
+            if(player.getNationality().equals("FIN")){
             System.out.println(player);
+            }
+
         }
     }
 
