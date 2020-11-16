@@ -70,6 +70,16 @@ public class Main {
             String username = request.queryParams("username");
             String password = request.queryParams("password");
             String passwordConf = request.queryParams("passwordConfirmation");
+            
+            if(password.length() < 8){
+            	
+            	model.put("error", "password should have at least 8 characters");
+            	            model.put("template", "templates/user.html");
+                                       return new ModelAndView(model, LAYOUT);
+            	
+            }
+            
+            
             if(password.equals(passwordConf)){
             CreationStatus status = authenticationService().createUser(username, password, passwordConf);
             
@@ -83,7 +93,7 @@ public class Main {
             }
             else{
             	model.put("error", "password and password confirmation do not match");
-            	            model.put("template", "templates/index.html");
+            	            model.put("template", "templates/user.html");
                                        return new ModelAndView(model, LAYOUT);
 
 

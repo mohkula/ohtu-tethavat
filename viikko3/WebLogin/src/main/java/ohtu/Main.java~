@@ -83,8 +83,7 @@ public class Main {
             }
             else{
             	model.put("error", "password and password confirmation do not match");
-            	            model.put("template", "templates/index.html");
-            	            	System.out.println("yee");
+            	            model.put("template", "templates/user.html");
                                        return new ModelAndView(model, LAYOUT);
 
 
