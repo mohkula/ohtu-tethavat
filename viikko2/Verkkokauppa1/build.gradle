@@ -1,9 +1,10 @@
 plugins {
     id  'application'
+    id 'jacoco'
 }
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
