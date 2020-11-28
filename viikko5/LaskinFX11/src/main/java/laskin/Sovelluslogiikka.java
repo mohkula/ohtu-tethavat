@@ -24,20 +24,17 @@ public class Sovelluslogiikka {
     }
 }
 
+class Summa extends Komento {
 
-class Summa extends Komento{
     private TextField syote;
-        private TextField tulostus;
-        private int arvo;
-        private int tulos;
+    private TextField tulostus;
+    private int arvo;
+    private int tulos;
 
-
-    public Summa(TextField tuloskentta, TextField syotekentta,  Button nollaa, Button undo, Sovelluslogiikka sovellus){
-        try{
+    public Summa(TextField tuloskentta, TextField syotekentta, Button nollaa, Button undo, Sovelluslogiikka sovellus) {
+        try {
             this.arvo = Integer.parseInt(syotekentta.getText());
-        }
-
-        catch(Exception e){
+        } catch (Exception e) {
             this.arvo = 0;
         }
 
@@ -49,32 +46,38 @@ class Summa extends Komento{
     @Override
     public void suorita() {
         arvo = Integer.parseInt(syote.getText());
-                tulos = Integer.parseInt(tulostus.getText());
-
-
+        tulos = Integer.parseInt(tulostus.getText());
 
         syote.setText("");
-    tulostus.setText("" + (arvo + tulos));
+        tulostus.setText("" + (arvo + tulos));
+        tulos = Integer.parseInt(tulostus.getText());
 
+    }
+
+    @Override
+    public void peru() {
+        tulostus.setText("" + (tulos - arvo));
     }
 
 }
 
+class Erotus extends Komento {
 
-class Erotus extends Komento{
     private TextField syote;
-        private TextField tulostus;
-        private int arvo;
-        private int tulos;
+    private TextField tulostus;
+    private int arvo;
+    private int tulos;
 
+    private TextField syotekentta;
+    private TextField tuloskentta;
 
+    public Erotus(TextField tuloskentta, TextField syotekentta, Button nollaa, Button undo, Sovelluslogiikka sovellus) {
 
-    public Erotus(TextField tuloskentta, TextField syotekentta,  Button nollaa, Button undo, Sovelluslogiikka sovellus){
- try{
+        this.syotekentta = this.syotekentta;
+        this.tuloskentta = this.tuloskentta;
+        try {
             this.arvo = Integer.parseInt(syotekentta.getText());
-        }
-
-        catch(Exception e){
+        } catch (Exception e) {
             this.arvo = 0;
         }
 
@@ -85,40 +88,53 @@ class Erotus extends Komento{
     @Override
     public void suorita() {
 
-
-               arvo = Integer.parseInt(syote.getText());
-                tulos = Integer.parseInt(tulostus.getText());
-
-
+        arvo = Integer.parseInt(syote.getText());
+        tulos = Integer.parseInt(tulostus.getText());
 
         syote.setText("");
-    tulostus.setText("" + (tulos - arvo));
+        tulostus.setText("" + (tulos - arvo));
+        tulos = Integer.parseInt(tulostus.getText());
+
+    }
+
+    @Override
+    public void peru() {
+        tulostus.setText("" + (tulos + arvo));
     }
 
 }
 
-
-
-class Nollaa extends Komento{
+class Nollaa extends Komento {
 
     private TextField syote;
-        private TextField tulostus;
-        private int arvo;
-        private int tulos;
+    private TextField tulostus;
+    private int arvo;
+    private int tulos;
+    private TextField tuloskentta;
 
+    public Nollaa(TextField tuloskentta, TextField syotekentta, Button nollaa, Button undo, Sovelluslogiikka sovellus) {
+        this.tuloskentta = tuloskentta;
+        try {
+            tulos = Integer.parseInt(tulostus.getText());
+        } catch (Exception e) {
+            tulos = 0;
+        }
 
-    public Nollaa(TextField tuloskentta, TextField syotekentta,  Button nollaa, Button undo, Sovelluslogiikka sovellus){
-
-
-          syote = syotekentta;
+        syote = syotekentta;
         tulostus = tuloskentta;
     }
 
     @Override
     public void suorita() {
 
-               syote.setText("");
-    tulostus.setText("0");
+        syote.setText("");
+        tulostus.setText("0");
+    }
+
+    @Override
+    public void peru() {
+
+        tulostus.setText(Integer.toString(tulos));
     }
 
 }

@@ -1,9 +1,9 @@
-laskin/Komento.java
- laskin.Komento
 laskin/Main.java
  laskin.Main
 laskin/GraafinenLaskin.java
  laskin.GraafinenLaskin
+laskin/Komento.java
+ laskin.Komento
 laskin/Tapahtumankuuntelija.java
  laskin.Tapahtumankuuntelija
 laskin/Sovelluslogiikka.java

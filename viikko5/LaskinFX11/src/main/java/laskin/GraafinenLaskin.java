@@ -22,7 +22,6 @@ public class GraafinenLaskin extends Pane {
         Button miinus = new Button("-");
         Button nollaa = new Button("Z");
         Button undo = new Button("undo");
-        undo.disableProperty().set(true);
 
         napit.getChildren().addAll(plus, miinus, nollaa, undo);
 
